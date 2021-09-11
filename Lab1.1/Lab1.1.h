@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 struct Point
 {
 public:
@@ -11,6 +9,8 @@ public:
     Point(double x, double y);
 };
 
-Point EnterPoint(std::string point_name);
+double EnterDouble(const char* number_name);
+
+Point EnterPoint(const char* point_name);
 
 double CalculateDistance(Point A, Point B);

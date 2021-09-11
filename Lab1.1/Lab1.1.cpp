@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <cmath>
+#include <Windows.h>
 
 #include "Lab1.1.h"
 
@@ -9,17 +10,31 @@ Point::Point(double x, double y)
 	this->y = y;
 }
 
-Point EnterPoint(std::string point_name)
+double EnterDouble(const char* number_name)
+{
+	double number;
+
+	std::cout << "Введіть " << number_name << ": ";
+
+	while (!(std::cin >> number))
+	{
+		std::cout << "Введіть " << number_name << ": ";
+		std::cin.clear();
+		std::cin.ignore(100, '\n');
+	}
+
+	return number;
+}
+
+Point EnterPoint(const char* point_name)
 {
 	double x, y;
 
-	std::cout << "Enter point " << point_name << ":" << std::endl;
+	std::cout << "Введіть точку " << point_name << ":" << std::endl;
 
-	std::cout << "\tEnter x: ";
-	std::cin >> x;
+	x = EnterDouble("x");
 
-	std::cout << "\tEnter y: ";
-	std::cin >> y;
+	y = EnterDouble("y");
 
 	std::cout << std::endl;
 
@@ -33,10 +48,12 @@ double CalculateDistance(Point A, Point B)
 
 int main()
 {
+	SetConsoleOutputCP(1251);
+
 	Point A = EnterPoint("A");
 	Point B = EnterPoint("B");
 
-	std::cout << "Distance between A and B is: " << CalculateDistance(A, B);
+	std::cout << "Відстань між точками A та B: " << CalculateDistance(A, B);
 
 	getchar();
 	getchar();
