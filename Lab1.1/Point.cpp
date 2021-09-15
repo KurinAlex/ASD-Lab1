@@ -11,13 +11,17 @@ Point::Point(double x, double y)
 
 Point EnterPoint(const char* point_name)
 {
-	double x, y;
+	if (point_name == "")
+	{
+		std::cout << "Введіть точку:" << std::endl;
+	}
+	else
+	{
+		std::cout << "Введіть точку " << point_name << ":" << std::endl;
+	}
 
-	std::cout << "Введіть точку " << point_name << ":" << std::endl;
-
-	x = EnterDecimal("x");
-
-	y = EnterDecimal("y");
+	double x = EnterDecimal("x");
+	double y = EnterDecimal("y");
 
 	std::cout << std::endl;
 
