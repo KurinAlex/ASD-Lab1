@@ -24,8 +24,10 @@ int main()
 		}
 	}
 
-	OutArray(array, ARRAY_SIZE);
+	OutputArray(array, ARRAY_SIZE);
 	std::cout << "Max: " << max;
+
+	delete[] array;
 
 	std::cin.get();
 }

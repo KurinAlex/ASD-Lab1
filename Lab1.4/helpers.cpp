@@ -36,7 +36,7 @@ int* GenerateArray(int array_size)
 	return array;
 }
 
-void OutArray(int* array, int array_size)
+void OutputArray(int* array, int array_size)
 {
 	std::cout << "Масив: [ ";
 	for (int i = 0; i < array_size; i++)
