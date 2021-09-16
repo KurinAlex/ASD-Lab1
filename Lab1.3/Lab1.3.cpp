@@ -5,17 +5,17 @@ int main()
 {
 	SetConsoleOutputCP(1251);
 
-	char* input = new char[1];
+	char input[3];
 	int iteration_count = 0;
 
 	do
 	{
 		std::cout << "Введіть 0: ";
-		std::cin.getline(input, 2);
+		std::cin.getline(input, 3);
 		if (std::cin.fail())
 		{
 			std::cin.clear();
-			std::cin.ignore(100, '\n');
+			std::cin.ignore(INT_MAX,'\n');
 		}
 		iteration_count++;
 	} while (std::strcmp(input, "0"));
