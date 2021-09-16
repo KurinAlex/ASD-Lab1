@@ -1,38 +1,30 @@
 ﻿#include <iostream>
 #include <windows.h>
-#include <cstdlib>
-#include <ctime>
+
+#include "helpers.h"
 
 #define ARRAY_SIZE 16
+#define HALF_ARRAY_SIZE (ARRAY_SIZE / 2)
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 
-	srand(time(0));
-
-	int array[ARRAY_SIZE];
-	int half_size = ARRAY_SIZE / 2;
 	int max = -RAND_MAX;
 	int diff;
 
-	std::cout << "Масив: [ ";
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		array[i] = rand();
-		std::cout << array[i] << ' ';
-	}
-	std::cout << "]\n";
+	int* array = GenerateArray(ARRAY_SIZE);
 
-	for (int i = 0; i < half_size; i++)
+	for (int i = 0; i < HALF_ARRAY_SIZE; i++)
 	{
-		diff = array[i] - array[i + half_size];
+		diff = array[i] - array[i + HALF_ARRAY_SIZE];
 		if (diff > max)
 		{
 			max = diff;
 		}
 	}
 
+	OutArray(array, ARRAY_SIZE);
 	std::cout << "Max: " << max;
 
 	std::cin.get();
