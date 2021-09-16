@@ -1,7 +1,9 @@
 ﻿#include <iostream>
 #include <windows.h>
 
-#include "Lab1.5.h"
+#define RANGE_LEFT_BOUND -3
+#define RANGE_RIGHT_BOUND 4
+#define STEP 0.5
 
 double f(double x)
 {
@@ -15,7 +17,7 @@ int main()
 	double max = -DBL_MAX;
 	double f_x;
 
-	for (double x = RANGE_LEFT_BOUND; x <= RANGE_RIGHT_BOUND; x += STRIDE)
+	for (double x = RANGE_LEFT_BOUND; x <= RANGE_RIGHT_BOUND; x += STEP)
 	{
 		f_x = f(x);
 		if (f_x > max)
@@ -25,7 +27,7 @@ int main()
 	}
 
 	std::cout << "Максимальне значення функції f(x)=x^3-2x^2+x-1 на проміжку [" 
-		<< RANGE_LEFT_BOUND << ',' << RANGE_RIGHT_BOUND << "] з кроком " << STRIDE << ": " << max;
+		<< RANGE_LEFT_BOUND << ',' << RANGE_RIGHT_BOUND << "] з кроком " << STEP << ": " << max;
 
 	std::cin.get();
 }
