@@ -16,7 +16,7 @@ double EnterDecimal(const char* decimal_name)
 		isFailure = std::cin.fail();
 
 		std::cin.clear();
-		std::cin.ignore(100, '\n');
+		std::cin.ignore(INT_MAX, '\n');
 	} while (isFailure);
 
 	return number;
