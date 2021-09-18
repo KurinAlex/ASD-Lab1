@@ -22,7 +22,7 @@ double EnterDecimal(const char* decimal_name)
 	return number;
 }
 
-double* GenerateArray(int array_size, double interval_from, double interval_to)
+double* GenerateRandomDoubleArray(int array_size, double interval_from, double interval_to)
 {
 	srand(time(0));
 

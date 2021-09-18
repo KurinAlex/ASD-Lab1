@@ -15,7 +15,7 @@ int main()
 	double max = INTERVAL_FROM - INTERVAL_TO;
 	double diff;
 
-	double* array = GenerateArray(ARRAY_SIZE, INTERVAL_FROM, INTERVAL_TO);
+	double* array = GenerateRandomDoubleArray(ARRAY_SIZE, INTERVAL_FROM, INTERVAL_TO);
 
 	for (int i = 0; i < HALF_ARRAY_SIZE; i++)
 	{
