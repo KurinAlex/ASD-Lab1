@@ -11,7 +11,7 @@ Point::Point(double x, double y)
 
 Point EnterPoint(const char* point_name)
 {
-	if (point_name == "")
+	if (point_name == NULL || !std::strcmp(point_name, ""))
 	{
 		std::cout << "Введіть точку:" << std::endl;
 	}
