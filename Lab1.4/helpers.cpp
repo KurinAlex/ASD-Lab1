@@ -22,21 +22,22 @@ double EnterDecimal(const char* decimal_name)
 	return number;
 }
 
-int* GenerateArray(int array_size)
+double* GenerateRandomDoubleArray(int array_size, double interval_from, double interval_to)
 {
 	srand(time(0));
 
-	int* array = new int[array_size];
+	double* array = new double[array_size];
+	double scale = (double)(interval_to - interval_from) / RAND_MAX;
 
 	for (int i = 0; i < array_size; i++)
 	{
-		array[i] = rand();
+		array[i] = interval_from + rand() * scale;
 	}
 
 	return array;
 }
 
-void OutputArray(int* array, int array_size)
+void OutputArray(double* array, int array_size)
 {
 	std::cout << "Масив: [ ";
 	for (int i = 0; i < array_size; i++)
