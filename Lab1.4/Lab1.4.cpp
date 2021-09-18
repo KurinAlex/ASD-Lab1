@@ -5,15 +5,17 @@
 
 #define ARRAY_SIZE 16
 #define HALF_ARRAY_SIZE (ARRAY_SIZE / 2)
+#define INTERVAL_FROM 0.1
+#define INTERVAL_TO 0.5
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 
-	int max = -RAND_MAX;
-	int diff;
+	double max = INTERVAL_FROM - INTERVAL_TO;
+	double diff;
 
-	int* array = GenerateArray(ARRAY_SIZE);
+	double* array = GenerateArray(ARRAY_SIZE, INTERVAL_FROM, INTERVAL_TO);
 
 	for (int i = 0; i < HALF_ARRAY_SIZE; i++)
 	{
