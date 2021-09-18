@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <windows.h>
 
-#include "Lab1.2.h"
+#include "Point.h"
 
 bool IsOnXAxis(Point point)
 {

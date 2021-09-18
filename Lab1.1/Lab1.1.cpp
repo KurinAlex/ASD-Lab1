@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <windows.h>
 
-#include "Lab1.1.h"
+#include "Point.h"
 
 double CalculateDistance(Point A, Point B)
 {
